@@ -1,0 +1,17 @@
+.footer-section {
+    width: 100%;
+    height: 70px; /* Fixed thickness for the footer block matching the specific screenshot */
+    background-color: #8f00ff; /* Exact solid vibrant purple color from reference */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}

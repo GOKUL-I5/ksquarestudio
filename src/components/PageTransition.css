@@ -1,0 +1,17 @@
+.transition-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 999999; /* Higher than everything else */
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.transition-bar {
+    flex: 1;
+    height: 100%;
+    transform: scaleY(0);
+}

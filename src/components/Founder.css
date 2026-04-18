@@ -1,0 +1,181 @@
+.founder-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* Diagonal gradient from Top-Left to Bottom-Right exactly as drawn by the user */
+    background: linear-gradient(135deg, #032871 0%, #6F01FF 52%, #060220 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.founder-logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 50;
+}
+
+.founder-logo img {
+    height: 92px;
+    /* Large scale matching the image */
+}
+
+@media (min-width: 1024px) {
+    .founder-logo img {
+        height: 96px;
+    }
+}
+
+.founder-container {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* push content to right half */
+}
+
+/* 
+   The image wrapper sticks tightly to the bottom left. 
+   It dominates the left side of the screen.
+*/
+.founder-image-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 90vh;
+    /* Scaling up to take most of vertical space */
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+}
+
+.founder-portrait {
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+    object-position: bottom left;
+    filter: grayscale(80%) contrast(1.1) brightness(0.9);
+}
+
+.founder-quote-wrapper {
+    width: 55%;
+    position: relative;
+    z-index: 20;
+    padding: 0 40px;
+    margin-right: 5%;
+    /* Bring it in from the right edge */
+}
+
+@media (max-width: 1024px) {
+    .founder-container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 180px 24px 0;
+    }
+
+    .founder-image-wrapper {
+        position: relative;
+        height: 50vh;
+        min-height: 400px; /* absolute fail-safe so image doesn't crush to zero */
+        width: 100%;
+        order: 2;
+    }
+
+    .founder-portrait {
+        object-position: bottom center;
+    }
+
+    .founder-quote-wrapper {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+        order: 1;
+    }
+
+    /* Force mobile native text wrapping despite explicit inline JSX locks */
+    .quote-text span {
+        white-space: normal !important;
+    }
+    
+    /* Dissolve forced breaks on mobile ensuring symmetric scaling */
+    .quote-text br {
+        display: none;
+    }
+}
+
+.quote-mark {
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.open-quote {
+    top: -10px;
+    left: 0px;
+}
+
+.close-quote {
+    bottom: 20px;
+    right: 10px;
+}
+
+@media (min-width: 1024px) {
+    .quote-mark {
+        font-size: 5rem;
+    }
+
+    .open-quote {
+        top: -20px;
+        left: -40px;
+    }
+
+    .close-quote {
+        bottom: 90px;
+        right: 20px;
+    }
+}
+
+.quote-text {
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: white;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 5;
+    margin-bottom: 48px;
+}
+
+.highlight-dark {
+    color: #0b0222;
+    /* very dark blue/black to match image */
+}
+
+.founder-author {
+    padding-left: 10px;
+}
+
+.author-name {
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-weight: 800;
+    color: #0b0222;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+}
+
+.author-role {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}

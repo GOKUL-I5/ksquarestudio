@@ -1,0 +1,53 @@
+.particle-network-fixed {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Locked absolutely behind all functional DOM elements */
+  pointer-events: none; /* Immune to scroll hijacking */
+  overflow: hidden;
+  background: #03000a; /* Sub-zero black establishing depth */
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  mix-blend-mode: screen; /* Light additive physics */
+}
+
+.orb-primary {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #6000ff 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+}
+
+.orb-secondary {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #00e5ff 0%, transparent 70%);
+  bottom: -20%;
+  right: -10%;
+}
+
+.orb-accent {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #d000ff 0%, transparent 70%);
+  top: 40%;
+  left: 20%;
+  opacity: 0.2;
+}
+
+.orb-core {
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, #3a00b8 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.15;
+}

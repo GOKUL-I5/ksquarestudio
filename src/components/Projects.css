@@ -1,0 +1,185 @@
+.projects-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Base solid dark void color */
+    background-color: #080114;
+    z-index: 1;
+}
+
+/* The Top Left sloped fading bar from the screenshot */
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -20%;
+    /* Expanded length dramatically off-screen to prevent harsh cutoff edges */
+    width: 120%;
+    /* Reduced thickness drastically to make the bar 'smaller' */
+    height: 150px;
+    min-height: 150px;
+    /* Adjusted percentages to account for 200% width expansion */
+    background: linear-gradient(90deg, #4d00e6 0%, #1c004a 25%, transparent 50%);
+    /* Locked in the user's specific 9deg slope preference */
+    transform: rotate(9deg);
+    transform-origin: left center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* The Bottom solid sloped bar from the previous screenshot */
+.projects-section::after {
+    content: '';
+    position: absolute;
+    /* Lifted up into the active viewport so it doesn't clip horizontally into a sharp wedge */
+    bottom: -30px; 
+    left: -10%;
+    /* Expanded length matching top bar */
+    width: 120%;
+    /* Reduced thickness matching top bar */
+    height: 150px;
+    min-height: 150px;
+    /* Reversed horizontal geometric fade anchored to the right */
+    background: linear-gradient(270deg, #4d00e6 0%, #1c004a 25%, transparent 50%);
+    /* Locked in the 12deg slope to remain perfectly parallel with the top bar */
+    transform: rotate(12deg);
+    transform-origin: right center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.projects-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.projects-logo img {
+    height: 150px;
+    margin-bottom: 4px;
+}
+
+.projects-title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project-card {
+    background-color: #d8d8d8;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 12px 12px 20px 12px; 
+    display: flex;
+    flex-direction: column;
+    /* Solid vivid purple border exactly as seen in the zoomed-in image */
+    border: 4px solid #8b3dff;
+    /* Replace the fake glow with a subtle proper shadow if needed, or none at all */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* 
+  The Top Colored Box
+*/
+.card-colored-top {
+    /* Inner concentric border radius matches outer 24px - 12px padding */
+    /* Curved top-left, top-right, and bottom-left. Sharp bottom-right perfectly seals with SVG. */
+    border-radius: 12px 12px 0px 12px; 
+    padding: 40px 32px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    /* Soft 1px shadow seamlessly bridges the specific subpixel rendering gap without shifting DOM overlap coordinates */
+    box-shadow: 0 1px 0 var(--card-color);
+    position: relative;
+    z-index: 2;
+}
+
+.card-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #000; /* Pure black text */
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.card-desc {
+    font-size: 1.15rem;
+    color: #fff; /* Pure white text */
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* 
+  The Bottom Split Area 
+  Contains Explore text on left, and the sweeping diagonal shape on right.
+*/
+.card-bottom-split {
+    display: flex;
+    width: 100%;
+    height: 90px; /* Fixed height for the slope and explore area */
+}
+
+.card-explore-area {
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    flex-shrink: 0;
+    border-radius: 0 0 0 12px;
+}
+
+.card-slope-area {
+    flex-grow: 1;
+    position: relative;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+}
+
+.explore-text {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #000;
+    margin-right: 12px;
+    letter-spacing: -0.02em;
+}
+
+.explore-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.explore-text {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #000;
+    margin-right: 12px;
+    letter-spacing: -0.02em;
+}
+
+.explore-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}

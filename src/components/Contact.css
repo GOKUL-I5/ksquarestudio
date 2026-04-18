@@ -1,0 +1,399 @@
+.contact-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Card pushes down to stick to footer */
+    /* Vibrant sweeping gradient left to right matching the reference screenshot */
+    background: linear-gradient(135deg, #032871 0%, #6F01FF 52%, #060220 100%);
+    overflow: hidden;
+}
+
+/* Massive translucent vertical text */
+.contact-watermark {
+    position: absolute;
+    left: 20px;
+    bottom: -50px;
+    font-size: clamp(4rem, 15vw, 16rem);
+    /* Fluid scale font */
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.25);
+    /* Faint translucent white/purple */
+    white-space: nowrap;
+    line-height: 0.8;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .contact-watermark {
+        left: 10px;
+        bottom: -30px;
+        opacity: 0.15;
+    }
+}
+
+/* Main content wrapper */
+.contact-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 550px; /* Slightly adjusted to fit side-by-side better */
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* Logo placement at the top of the form */
+.contact-header {
+    margin-bottom: 24px;
+    margin-top: 100px;
+    /* Space from top of viewport */
+}
+
+.contact-logo {
+    margin: 0px;
+    padding: 0px;
+    height: 190px;
+    /* Scaled up precisely to match the massive visual profile in the specific screenshot */
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .contact-header {
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
+    .contact-logo {
+        height: 120px;
+    }
+}
+
+/* White Form Card */
+.contact-card {
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 40px 40px 60px 40px;
+    /* Soft top corners, sharp flat bottom to dock cleanly to the footer */
+    border-radius: 40px 40px 0 0;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 30px 20px 40px 20px;
+        border-radius: 30px 30px 0 0;
+    }
+    .contact-card::before {
+        border-radius: 30px 30px 0 0;
+    }
+}
+
+/* Advanced native CSS mask to draw the exact 4px vivid gradient border around the curved top without disrupting standard DOM nesting */
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px 40px 0 0;
+    /* Match outer rim geometry exactly */
+    padding: 4px 4px 0 4px;
+    /* Exact 4px thickness restricted exclusively to top/left/right edges */
+    background: linear-gradient(90deg, #8000dc 0%, #5900ff 100%);
+    /* Use mask compositing to carve out the inner void, leaving ONLY the gradient border */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.form-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #4f00b3;
+    /* Vibrant deep purple label color */
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    background-color: #f6eeff;
+    /* Extremely soft purple inner-field glow */
+    border: 1px solid #d4b5ff;
+    /* Crisp purple border trace */
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 1rem;
+    color: #1a0033;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #7b00ff;
+    box-shadow: 0 0 0 3px rgba(123, 0, 255, 0.2);
+}
+
+.form-textarea {
+    resize: none;
+    height: 140px;
+}
+
+.form-submit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.form-submit-btn {
+    background-color: #7b00ff;
+    /* Solid branded vivid purple button */
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-submit-btn:hover {
+    background-color: #6200cc;
+}
+
+.form-submit-btn:active {
+    transform: scale(0.97);
+}
+
+.form-submit-btn.loading {
+    background-color: #6200cc;
+    cursor: wait;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.spinner {
+    animation: rotate 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.form-submit-btn svg {
+    margin-right: 8px;
+}
+
+/* Success View */
+.success-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0;
+    min-height: 400px;
+}
+
+.success-icon-wrapper {
+    margin-bottom: 24px;
+    background: #f6eeff;
+    padding: 20px;
+    border-radius: 50%;
+    border: 2px solid #7b00ff;
+}
+
+.success-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a0033;
+    margin-bottom: 12px;
+}
+
+.success-desc {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.reset-btn {
+    background-color: transparent;
+    border: 2px solid #7b00ff;
+    color: #7b00ff;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #7b00ff;
+    color: white;
+}
+
+.error-text {
+    color: #ff3b3b;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* Info Sidebar Styling */
+.contact-info-sidebar {
+    flex: 1;
+    max-width: 450px;
+    padding: 40px 0;
+    color: white;
+}
+
+.info-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(to right, #fff, rgba(255,255,255,0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.info-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 48px;
+}
+
+.contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    cursor: default;
+}
+
+a.contact-info-item {
+    cursor: pointer;
+}
+
+.info-icon-box {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccaaff;
+    transition: all 0.3s ease;
+}
+
+.contact-info-item:hover .info-icon-box {
+    background: #7b00ff;
+    border-color: #7b00ff;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.info-text-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .contact-info-sidebar {
+        text-align: center;
+        padding: 0 0 60px 0;
+    }
+    .info-title {
+        font-size: 2.5rem;
+    }
+    .contact-info-item {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .info-text-box {
+        align-items: center;
+    }
+}
