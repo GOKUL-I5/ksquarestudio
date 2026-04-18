@@ -1,11 +1,23 @@
-/* Hide standard cursor site-wide */
-body, html {
-  cursor: none;
+/* Hide standard cursor site-wide on desktop only */
+@media (pointer: fine) {
+  body, html {
+    cursor: none;
+  }
+  
+  /* Ensure interactive elements also don't flash default cursors */
+  a, button, input, textarea, .tilt-card {
+    cursor: none !important;
+  }
 }
 
-/* Ensure interactive elements also don't flash default cursors */
-a, button, input, textarea, .tilt-card {
-  cursor: none !important;
+/* On touch devices, ensure native cursor behavior is restored */
+@media (pointer: coarse) {
+  body, html {
+    cursor: auto;
+  }
+  .ios-cursor, .ambient-spotlight {
+    display: none !important;
+  }
 }
 
 /* Colossal ambient mouse-tracking spotlight (Background layer) */

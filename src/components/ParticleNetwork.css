@@ -3,24 +3,31 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0; /* Locked absolutely behind all functional DOM elements */
-  pointer-events: none; /* Immune to scroll hijacking */
+  z-index: 0;
+  pointer-events: none;
   overflow: hidden;
-  background: #03000a; /* Sub-zero black establishing depth */
+  background: #03000a;
 }
 
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
   opacity: 0.4;
-  mix-blend-mode: screen; /* Light additive physics */
+  mix-blend-mode: screen;
+  /* Hardware Acceleration */
+  will-change: transform;
+  transform: translate3d(0,0,0);
 }
+
+/* 
+   Optimization: Removed CSS filter: blur() which is extremely expensive to paint.
+   Instead, we rely on the smoother radial-gradients.
+*/
 
 .orb-primary {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, #6000ff 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(96, 0, 255, 0.5) 0%, transparent 60%);
   top: -10%;
   left: -10%;
 }
@@ -28,7 +35,7 @@
 .orb-secondary {
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, #00e5ff 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, transparent 60%);
   bottom: -20%;
   right: -10%;
 }
@@ -36,18 +43,24 @@
 .orb-accent {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #d000ff 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(208, 0, 255, 0.3) 0%, transparent 60%);
   top: 40%;
   left: 20%;
-  opacity: 0.2;
 }
 
 .orb-core {
   width: 1000px;
   height: 1000px;
-  background: radial-gradient(circle, #3a00b8 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(58, 0, 184, 0.2) 0%, transparent 60%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.15;
+}
+
+/* Mobile Performance: Shrink or remove massive orbs to save GPU memory */
+@media (max-width: 768px) {
+  .orb-primary { width: 300px; height: 300px; }
+  .orb-secondary { width: 400px; height: 400px; }
+  .orb-accent { display: none; }
+  .orb-core { width: 500px; height: 500px; }
 }

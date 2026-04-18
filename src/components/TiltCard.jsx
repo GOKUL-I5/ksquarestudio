@@ -16,8 +16,10 @@ const TiltCard = ({ children, className = '' }) => {
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
 
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
   const handleMouseMove = (e) => {
-    if (!ref.current) return;
+    if (isMobile || !ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -33,6 +35,7 @@ const TiltCard = ({ children, className = '' }) => {
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     x.set(0);
     y.set(0);
   };
@@ -44,25 +47,27 @@ const TiltCard = ({ children, className = '' }) => {
       onMouseLeave={handleMouseLeave}
       className={className}
       style={{
-        rotateX,
-        rotateY,
+        rotateX: isMobile ? 0 : rotateX,
+        rotateY: isMobile ? 0 : rotateY,
         transformStyle: "preserve-3d",
       }}
-      whileHover={{ scale: 1.02 }}
+      whileHover={isMobile ? {} : { scale: 1.02 }}
     >
       {/* Glare effect overlay */}
-      <motion.div 
-        style={{
-           position: 'absolute',
-           inset: 0,
-           background: `radial-gradient(circle at ${useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"])} ${useTransform(mouseYSpring, [-0.5, 0.5], ["0%", "100%"])}, rgba(255,255,255,0.2) 0%, transparent 60%)`,
-           pointerEvents: 'none',
-           borderRadius: 'inherit',
-           zIndex: 10,
-           opacity: 0,
-        }}
-        whileHover={{ opacity: 1 }}
-      />
+      {!isMobile && (
+        <motion.div 
+          style={{
+             position: 'absolute',
+             inset: 0,
+             background: `radial-gradient(circle at ${useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"])} ${useTransform(mouseYSpring, [-0.5, 0.5], ["0%", "100%"])}, rgba(255,255,255,0.2) 0%, transparent 60%)`,
+             pointerEvents: 'none',
+             borderRadius: 'inherit',
+             zIndex: 10,
+             opacity: 0,
+          }}
+          whileHover={{ opacity: 1 }}
+        />
+      )}
       {/* Content */}
       <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d", height: "100%" }}>
         {children}

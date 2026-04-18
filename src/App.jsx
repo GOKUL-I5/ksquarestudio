@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     // Initialize Lenis exactly once to seize viewport physics scrolling engine
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Seamless snappable ease
       direction: 'vertical',
       gestureDirection: 'vertical',
@@ -30,16 +30,18 @@ function App() {
     });
 
     // Request animation frame recursion directly binding GSAP timeline data or native sync
+    let rafId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // Hard cleanup 
     return () => {
       lenis.destroy();
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
