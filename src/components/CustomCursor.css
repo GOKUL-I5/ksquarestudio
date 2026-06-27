@@ -1,25 +1,3 @@
-/* Hide standard cursor site-wide on desktop only */
-@media (pointer: fine) {
-  body, html {
-    cursor: none;
-  }
-  
-  /* Ensure interactive elements also don't flash default cursors */
-  a, button, input, textarea, .tilt-card {
-    cursor: none !important;
-  }
-}
-
-/* On touch devices, ensure native cursor behavior is restored */
-@media (pointer: coarse) {
-  body, html {
-    cursor: auto;
-  }
-  .ios-cursor, .ambient-spotlight {
-    display: none !important;
-  }
-}
-
 /* Colossal ambient mouse-tracking spotlight (Background layer) */
 .ambient-spotlight {
   position: fixed;
@@ -32,50 +10,4 @@
   pointer-events: none;
   z-index: 1; 
   mix-blend-mode: screen;
-}
-
-/* Primary iOS/Figma Cursor (Top layer) */
-.ios-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  /* iOS style glass effect */
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Inner dot that appears on hover or changes state */
-.ios-cursor::after {
-  content: '';
-  width: 5px;
-  height: 5px;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hover state styling */
-.ios-cursor.hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.ios-cursor.hover::after {
-  transform: scale(1.5);
-  opacity: 1;
-}
-
-/* Support for standard inversion on light backgrounds if cursor enters them */
-.ios-cursor {
-  mix-blend-mode: exclusion;
 }
