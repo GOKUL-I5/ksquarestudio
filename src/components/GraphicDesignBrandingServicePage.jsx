@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Image, Palette, Shapes, Sliders } from 'lucide-react';
-import SEO from './SEO';
+import SeoMetadataManager from './SeoMetadataManager';
 import './About.css';
 
-export default function GraphicServicePage({ playTransition }) {
+export default function GraphicDesignBrandingServicePage({ playTransition }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function GraphicServicePage({ playTransition }) {
 
   return (
     <div className="relative min-h-screen pt-24 pb-16 px-4 md:px-8 max-w-5xl mx-auto z-10">
-      <SEO
+      <SeoMetadataManager
         title="Graphic Design Chennai | Branding & Identity Systems | KSquareStudio"
         description="Looking for creative branding & graphic design in Chennai? KSquareStudio designs logos, brand systems, and digital assets that capture attention."
         canonical={window.location.origin + "/services/branding-graphic-design"}

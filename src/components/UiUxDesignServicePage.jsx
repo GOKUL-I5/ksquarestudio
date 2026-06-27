@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Compass, Eye, Heart, Users } from 'lucide-react';
-import SEO from './SEO';
+import SeoMetadataManager from './SeoMetadataManager';
 import './About.css';
 
-export default function UxServicePage({ playTransition }) {
+export default function UiUxDesignServicePage({ playTransition }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function UxServicePage({ playTransition }) {
 
   return (
     <div className="relative min-h-screen pt-24 pb-16 px-4 md:px-8 max-w-5xl mx-auto z-10">
-      <SEO
+      <SeoMetadataManager
         title="UI/UX Design Chennai | Best Digital Product Agency | KSquareStudio"
         description="Looking for expert UI/UX design in Chennai? KSquareStudio is a top digital product agency crafting custom, beautiful, and user-centric interfaces."
         canonical={window.location.origin + "/services/ui-ux"}

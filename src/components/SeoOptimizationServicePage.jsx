@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, BarChart3, Search, Settings, TrendingUp } from 'lucide-react';
-import SEO from './SEO';
+import SeoMetadataManager from './SeoMetadataManager';
 import './About.css';
 
-export default function SeoServicePage({ playTransition }) {
+export default function SeoOptimizationServicePage({ playTransition }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function SeoServicePage({ playTransition }) {
 
   return (
     <div className="relative min-h-screen pt-24 pb-16 px-4 md:px-8 max-w-5xl mx-auto z-10">
-      <SEO
+      <SeoMetadataManager
         title="SEO Services Chennai | Local Google Search Optimization | KSquareStudio"
         description="Rank #1 with the best SEO services Chennai has to offer. KSquareStudio specializes in technical SEO, Core Web Vitals optimization, and local search growth."
         canonical={window.location.origin + "/services/seo"}

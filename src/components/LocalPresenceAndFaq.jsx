@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './LocalSeoFaq.css';
+import './LocalPresenceAndFaq.css';
 import { Plus } from 'lucide-react';
 
-export default function LocalSeoFaq() {
+export default function LocalPresenceAndFaq() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 
-import Hero from './components/Hero';
+import HeroSection from './components/HeroSection';
 import About from './components/About';
 import Services from './components/Services';
 import Founder from './components/Founder';
@@ -13,14 +13,14 @@ import CustomCursor from './components/CustomCursor';
 import ParticleNetwork from './components/ParticleNetwork';
 import PageTransition from './components/PageTransition';
 
-// New Components
-import LocalSeoFaq from './components/LocalSeoFaq';
-import WebServicePage from './components/WebServicePage';
-import UxServicePage from './components/UxServicePage';
-import SeoServicePage from './components/SeoServicePage';
-import GraphicServicePage from './components/GraphicServicePage';
-import AiServicePage from './components/AiServicePage';
-import SEO from './components/SEO';
+// Renamed human-readable components
+import LocalPresenceAndFaq from './components/LocalPresenceAndFaq';
+import WebDevelopmentServicePage from './components/WebDevelopmentServicePage';
+import UiUxDesignServicePage from './components/UiUxDesignServicePage';
+import SeoOptimizationServicePage from './components/SeoOptimizationServicePage';
+import GraphicDesignBrandingServicePage from './components/GraphicDesignBrandingServicePage';
+import AiAutomationServicePage from './components/AiAutomationServicePage';
+import SeoMetadataManager from './components/SeoMetadataManager';
 
 // Scroll to top helper to trigger on route changes
 function ScrollToTop() {
@@ -35,19 +35,19 @@ function ScrollToTop() {
 function HomeView({ playTransition }) {
   return (
     <>
-      <SEO
+      <SeoMetadataManager 
         title="Web Design & Development Company in Chennai | KSquareStudio"
         description="KSquareStudio is a premier web design & development company in Chennai, delivering custom websites, UI/UX design, SEO, branding, and AI automation."
         canonical={window.location.origin + "/"}
       />
       <main>
-        {/* We pass the transition trigger down to Hero for the nav links */}
-        <Hero playTransition={playTransition} />
+        {/* We pass the transition trigger down to HeroSection for the nav links */}
+        <HeroSection playTransition={playTransition} />
         <About />
         <Services playTransition={playTransition} />
         <Founder />
         <Projects />
-        <LocalSeoFaq />
+        <LocalPresenceAndFaq />
         <Contact />
       </main>
     </>
@@ -97,10 +97,10 @@ function App() {
   return (
     <div className="bg-[#050012] min-h-screen text-white font-sans selection:bg-purple-600 selection:text-white relative">
       <CustomCursor />
-
+      
       {/* Volumetric Particle Network serving as endless depth backdrop */}
       <ParticleNetwork />
-
+      
       {/* Cinematic Transition Overlay */}
       <PageTransition ref={transitionRef} />
 
@@ -110,11 +110,11 @@ function App() {
       <div className="relative z-10">
         <Routes>
           <Route path="/" element={<HomeView playTransition={triggerTransition} />} />
-          <Route path="/services/web-development" element={<WebServicePage playTransition={triggerTransition} />} />
-          <Route path="/services/ui-ux" element={<UxServicePage playTransition={triggerTransition} />} />
-          <Route path="/services/seo" element={<SeoServicePage playTransition={triggerTransition} />} />
-          <Route path="/services/branding-graphic-design" element={<GraphicServicePage playTransition={triggerTransition} />} />
-          <Route path="/services/ai-automation" element={<AiServicePage playTransition={triggerTransition} />} />
+          <Route path="/services/web-development" element={<WebDevelopmentServicePage playTransition={triggerTransition} />} />
+          <Route path="/services/ui-ux" element={<UiUxDesignServicePage playTransition={triggerTransition} />} />
+          <Route path="/services/seo" element={<SeoOptimizationServicePage playTransition={triggerTransition} />} />
+          <Route path="/services/branding-graphic-design" element={<GraphicDesignBrandingServicePage playTransition={triggerTransition} />} />
+          <Route path="/services/ai-automation" element={<AiAutomationServicePage playTransition={triggerTransition} />} />
         </Routes>
         <Footer />
       </div>
