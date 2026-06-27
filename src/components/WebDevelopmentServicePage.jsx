@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, Cpu, Globe, Layout, ShieldAlert } from 'lucide-react';
-import SEO from './SEO';
+import SeoMetadataManager from './SeoMetadataManager';
 import './About.css'; // Leverage existing typographic and grid structures for consistency
 
-export default function WebServicePage({ playTransition }) {
+export default function WebDevelopmentServicePage({ playTransition }) {
   const navigate = useNavigate();
 
   // Scroll to top of the page when loaded
@@ -53,7 +53,7 @@ export default function WebServicePage({ playTransition }) {
 
   return (
     <div className="relative min-h-screen pt-24 pb-16 px-4 md:px-8 max-w-5xl mx-auto z-10">
-      <SEO
+      <SeoMetadataManager
         title="Web Design & Development Company in Chennai | KSquareStudio"
         description="Looking for the best web design & development company in Chennai? KSquareStudio builds custom, high-performance, and SEO-optimized websites that scale your business."
         canonical={window.location.origin + "/services/web-development"}

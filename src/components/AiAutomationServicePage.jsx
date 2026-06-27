@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Cpu, Database, Eye, Terminal } from 'lucide-react';
-import SEO from './SEO';
+import SeoMetadataManager from './SeoMetadataManager';
 import './About.css';
 
-export default function AiServicePage({ playTransition }) {
+export default function AiAutomationServicePage({ playTransition }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function AiServicePage({ playTransition }) {
 
   return (
     <div className="relative min-h-screen pt-24 pb-16 px-4 md:px-8 max-w-5xl mx-auto z-10">
-      <SEO
+      <SeoMetadataManager
         title="AI Automation Services | Workflow & Chatbot Systems | KSquareStudio"
         description="Streamline your workflows with premium AI automation services. KSquareStudio builds custom AI bots, automated data feeds, and API integrations."
         canonical={window.location.origin + "/services/ai-automation"}
