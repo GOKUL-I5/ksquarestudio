@@ -72,16 +72,15 @@ export default function LocalPresenceAndFaq() {
           <div className="localseo-logo">
             <img src="/Logo full.png" alt="KSquareStudio Logo" />
           </div>
-          <h2 className="localseo-title">FAQ & Local Presence</h2>
+          <h2 className="localseo-title">Frequently Asked Questions</h2>
           <p className="localseo-subtitle">
-            Answering your questions and establishing our local footprint in Chennai.
+            Answering your questions and clarifying our capabilities.
           </p>
         </div>
 
-        <div className="localseo-grid">
+        <div className="localseo-grid-single">
           {/* FAQ Accordion */}
           <div className="faq-wrapper">
-            <h3>Frequently Asked Questions</h3>
             <div className="faq-list">
               {faqs.map((faq, index) => (
                 <div
@@ -107,67 +106,6 @@ export default function LocalPresenceAndFaq() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Local SEO Details & Interactive Map representation */}
-          <div className="localseo-sidebar-wrapper">
-            <div>
-              <h3 className="localseo-card-title">Chennai Office</h3>
-              <div className="localseo-details-card">
-                <div className="localseo-info-group">
-                  <span className="localseo-info-label">Agency Address</span>
-                  <span className="localseo-info-value">
-                    Chennai, Tamil Nadu, India
-                  </span>
-                </div>
-
-                <div className="localseo-info-group">
-                  <span className="localseo-info-label">Contact Details</span>
-                  <span className="localseo-info-value">
-                    Phone: <a href="tel:7305962714" style={{ color: '#fff', textDecoration: 'underline' }}>7305962714</a><br />
-                    Email: <a href="mailto:ksquarestudio2025@gmail.com" style={{ color: '#fff', textDecoration: 'underline' }}>ksquarestudio2025@gmail.com</a>
-                  </span>
-                </div>
-
-                <div className="localseo-info-group">
-                  <span className="localseo-info-label">Key Service Regions</span>
-                  <div className="localseo-areas">
-                    <span className="localseo-tag">Adyar</span>
-                    <span className="localseo-tag">T. Nagar</span>
-                    <span className="localseo-tag">Velachery</span>
-                    <span className="localseo-tag">Guindy</span>
-                    <span className="localseo-tag">OMR</span>
-                    <span className="localseo-tag">Nungambakkam</span>
-                    <span className="localseo-tag">ECR</span>
-                  </div>
-                </div>
-
-                <div className="localseo-info-group">
-                  <span className="localseo-info-label">Hours of Operation</span>
-                  <span className="localseo-info-value">
-                    Monday – Saturday: 9:00 AM – 7:00 PM (IST)
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Gray/Dark stylized map indicating precise location coordinate focus */}
-            <div className="localseo-map-container">
-              <div className="localseo-map-overlay"></div>
-              {/* Using a privacy-friendly OpenStreetMap/Google Maps embed configured to look dark/monochrome */}
-              <iframe
-                title="KSquareStudio Chennai Office Location"
-                className="localseo-map-embed"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.88653935955!2d80.11713175892556!3d13.082680214691456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6a61a9911e2c6360!2sChennai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sus!4v1710500000000!5m2!1sen!2sus"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <div className="localseo-map-marker">
-                <div className="marker-pin"></div>
-                <div className="marker-pulse"></div>
-              </div>
             </div>
           </div>
         </div>

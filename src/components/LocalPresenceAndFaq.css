@@ -65,6 +65,11 @@
   gap: 4rem;
 }
 
+.localseo-grid-single {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 @media (max-width: 968px) {
   .localseo-grid {
     grid-template-columns: 1fr;
