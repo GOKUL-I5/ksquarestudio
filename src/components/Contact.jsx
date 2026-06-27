@@ -127,7 +127,14 @@ const Contact = () => {
             <div className="contact-container">
                 {/* Logo Area */}
                 <div className="contact-header">
-                    <img src="/Logo full.png" alt="K2 KSquare Studio" className="contact-logo" />
+                    <img 
+                      src="/Logo full.png" 
+                      alt="KSquareStudio - Digital Product Agency Logo" 
+                      className="contact-logo" 
+                      loading="lazy"
+                      width="350"
+                      height="190"
+                    />
                 </div>
 
                 <div className="contact-grid">
@@ -169,43 +176,46 @@ const Contact = () => {
                                         exit={{ opacity: 0 }}
                                     >
                                         
-                                        <div className="form-group">
-                                            <label htmlFor="name" className="form-label">Name</label>
-                                            <input 
-                                                type="text" 
-                                                id="name" 
-                                                className="form-input" 
-                                                placeholder="Enter your name"
-                                                required 
-                                                value={formData.name}
-                                                onChange={handleChange}
-                                            />
-                                        </div>
+                                         <div className="form-group">
+                                             <label htmlFor="name" className="form-label">Name</label>
+                                             <input 
+                                                 type="text" 
+                                                 id="name" 
+                                                 className="form-input" 
+                                                 placeholder="Enter your name"
+                                                 required 
+                                                 aria-required="true"
+                                                 value={formData.name}
+                                                 onChange={handleChange}
+                                             />
+                                         </div>
 
-                                        <div className="form-group">
-                                            <label htmlFor="email" className="form-label">Email</label>
-                                            <input 
-                                                type="email" 
-                                                id="email" 
-                                                className="form-input" 
-                                                placeholder="Enter your email"
-                                                required 
-                                                value={formData.email}
-                                                onChange={handleChange}
-                                            />
-                                        </div>
+                                         <div className="form-group">
+                                             <label htmlFor="email" className="form-label">Email</label>
+                                             <input 
+                                                 type="email" 
+                                                 id="email" 
+                                                 className="form-input" 
+                                                 placeholder="Enter your email"
+                                                 required 
+                                                 aria-required="true"
+                                                 value={formData.email}
+                                                 onChange={handleChange}
+                                             />
+                                         </div>
 
-                                        <div className="form-group form-group-grow">
-                                            <label htmlFor="enquiry" className="form-label">Enquiry About</label>
-                                            <textarea 
-                                                id="enquiry" 
-                                                className="form-textarea" 
-                                                placeholder="What would you like to discuss?"
-                                                required
-                                                value={formData.enquiry}
-                                                onChange={handleChange}
-                                            ></textarea>
-                                        </div>
+                                         <div className="form-group form-group-grow">
+                                             <label htmlFor="enquiry" className="form-label">Enquiry About</label>
+                                             <textarea 
+                                                 id="enquiry" 
+                                                 className="form-textarea" 
+                                                 placeholder="What would you like to discuss?"
+                                                 required
+                                                 aria-required="true"
+                                                 value={formData.enquiry}
+                                                 onChange={handleChange}
+                                             ></textarea>
+                                         </div>
 
                                         <div className="form-submit-wrapper">
                                             <motion.button 
@@ -272,15 +282,15 @@ const Contact = () => {
                                     </div>
                                 </motion.a>
 
-                                <div className="contact-info-item">
-                                    <div className="info-icon-box">
-                                        <MapPin size={24} />
-                                    </div>
-                                    <div className="info-text-box">
-                                        <span className="info-label">Location</span>
-                                        <span className="info-value">Remote / Global</span>
-                                    </div>
-                                </div>
+                                 <div className="contact-info-item">
+                                     <div className="info-icon-box">
+                                         <MapPin size={24} />
+                                     </div>
+                                     <div className="info-text-box">
+                                         <span className="info-label">Location</span>
+                                         <span className="info-value">Chennai, Tamil Nadu, India</span>
+                                     </div>
+                                 </div>
                             </div>
                         </div>
                     </div>

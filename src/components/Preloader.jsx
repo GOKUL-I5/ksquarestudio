@@ -57,7 +57,7 @@ const Preloader = ({ onComplete }) => {
       
       <div className="preloader-content" ref={textRef}>
         <div className="preloader-logo-wrapper">
-            <h1 className="preloader-brand">K² STUDIOS</h1>
+            <h1 className="preloader-brand">KSquareStudio</h1>
         </div>
         <div className="preloader-percent">{progress}%</div>
         

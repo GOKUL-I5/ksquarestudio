@@ -5,14 +5,21 @@ const Founder = () => {
   return (
     <section className="founder-section">
       <div className="founder-logo">
-        <img src="/Logo full.png" alt="K² Studios Branding" />
+        <img src="/Logo full.png" alt="KSquareStudio Branding" />
       </div>
 
       <div className="founder-container">
 
         {/* Left Side Founder Portrait */}
         <div className="founder-image-wrapper">
-          <img src="/person bw.png" alt="Karthik krishnan GS - Founder of K² Studios" className="founder-portrait" />
+          <img 
+            src="/KSquareStudio Founder.png" 
+            alt="Karthik krishnan GS - Founder of KSquareStudio" 
+            className="founder-portrait" 
+            loading="lazy"
+            width="600"
+            height="800"
+          />
         </div>
 
         {/* Right Side Quote */}
@@ -27,7 +34,7 @@ const Founder = () => {
 
           <div className="founder-author">
             <h3 className="author-name">Karthik krishnan GS</h3>
-            <p className="author-role">Founder, K² Studios</p>
+            <p className="author-role">Founder, KSquareStudio</p>
           </div>
         </div>
 

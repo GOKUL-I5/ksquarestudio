@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./HeroSection.css";
 import gsap from "gsap";
 import SplitType from "split-type";
@@ -6,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function HeroSection({ playTransition }) {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -61,24 +64,36 @@ export default function HeroSection({ playTransition }) {
     setActiveTab(tabName);
     setIsMenuOpen(false); // Close mobile menu if open
     
-    // Trigger cinematic transition
-    if (playTransition) {
-      playTransition(() => {
-        const targetId = tabName.toLowerCase();
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          // Instant scroll while screen is covered for seamless "jump" feel, 
-          // or smooth scroll for continuous motion. 
-          // We use smooth for Lenis compatibility.
-          targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
-        }
-      });
-    } else {
-      // Fallback
-      const targetId = tabName.toLowerCase();
+    const targetId = tabName.toLowerCase();
+    
+    const scrollAction = () => {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Use auto scrolling when screen transition cover is active, smooth fallback
+        targetElement.scrollIntoView({ 
+          behavior: playTransition ? 'auto' : 'smooth', 
+          block: 'start' 
+        });
+      }
+    };
+
+    if (location.pathname !== '/') {
+      // If we are not on the homepage, route back to home first, then scroll
+      if (playTransition) {
+        playTransition(() => {
+          navigate('/');
+          setTimeout(scrollAction, 100);
+        });
+      } else {
+        navigate('/');
+        setTimeout(scrollAction, 100);
+      }
+    } else {
+      // We are already on the homepage
+      if (playTransition) {
+        playTransition(scrollAction);
+      } else {
+        scrollAction();
       }
     }
   };
@@ -118,10 +133,15 @@ export default function HeroSection({ playTransition }) {
       <div className="center-glow"></div>
 
       {/* Navbar with Declarative Framer Motion Physics */}
-      <nav className="navbar">
+      <nav className="navbar" role="navigation" aria-label="Main Navigation">
         <div className="navbar-container">
           {/* Mobile Hamburger Toggle */}
-          <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button 
+            className="mobile-menu-btn" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
+          >
              {isMenuOpen ? <X size={28} color="#fff" /> : <Menu size={28} color="#fff" />}
           </button>
 
@@ -176,8 +196,9 @@ export default function HeroSection({ playTransition }) {
         <img 
           ref={logoRef}
           src="/Logo full.png" 
-          alt="K2 Studios Logo" 
+          alt="KSquareStudio Logo - Digital Product Agency Chennai" 
           className="logo-image" 
+          fetchPriority="high"
         />
 
         <h1 ref={headingRef} style={{ perspective: "1000px" }}>

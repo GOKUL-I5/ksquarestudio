@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Services.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,17 +8,18 @@ import { ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Services = () => {
+const Services = ({ playTransition }) => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const leftPanelRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const servicesList = [
-    { id: '01', category: 'Service 1', title: 'Website Development' },
-    { id: '02', category: 'Service 2', title: 'UI/UX Design' },
-    { id: '03', category: 'Service 3', title: 'Graphic Design' },
-    { id: '04', category: 'Service 4', title: 'AI Automation' },
-    { id: '05', category: 'Service 5', title: 'Presentation Design' },
+    { id: '01', category: 'Service 1', title: 'Website Development', path: '/services/web-development' },
+    { id: '02', category: 'Service 2', title: 'UI/UX Design', path: '/services/ui-ux' },
+    { id: '03', category: 'Service 3', title: 'Graphic Design', path: '/services/branding-graphic-design' },
+    { id: '04', category: 'Service 4', title: 'AI Automation', path: '/services/ai-automation' },
+    { id: '05', category: 'Service 5', title: 'Presentation Design', path: '/services/branding-graphic-design' },
   ];
 
   useEffect(() => {
@@ -53,6 +55,16 @@ const Services = () => {
     return () => ctx.revert();
   }, []);
 
+  const handleServiceClick = (path) => {
+    if (playTransition) {
+      playTransition(() => {
+        navigate(path);
+      });
+    } else {
+      navigate(path);
+    }
+  };
+
   return (
     <section id="services" ref={containerRef} className="services-section">
       <div className="services-container">
@@ -60,7 +72,7 @@ const Services = () => {
         {/* Left Side (Purple Gradient) */}
         <div ref={leftPanelRef} className="services-left">
           <div className="services-logo">
-            <img src="/Logo full.png" alt="K² Studios Services Overview" />
+            <img src="/Logo full.png" alt="KSquareStudio Services Overview" />
           </div>
           <div className="services-left-content">
             <h2>Services</h2>
@@ -77,6 +89,8 @@ const Services = () => {
                 className={`service-row ${hoveredIndex === index ? 'is-hovered' : ''}`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => handleServiceClick(service.path)}
+                style={{ cursor: 'pointer' }}
                 whileHover={{ x: 20 }}
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
               >

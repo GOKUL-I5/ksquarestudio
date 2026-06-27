@@ -80,10 +80,10 @@ const About = () => {
         <h2 className="about-heading">About</h2>
         
         <p ref={textRef} className="about-paragraph">
-          At K² Studios, we don't just build websites or design logos; we create digital legacies. Born from a passion for clean lines, dark-mode aesthetics, and glassmorphism, our studio is a playground for innovation. We help brands evolve by stripping away the noise and focusing on high-impact, high-resolution storytelling.
+          At KSquareStudio, we don't just build websites or design logos; we create digital legacies. Born from a passion for clean lines, dark-mode aesthetics, and glassmorphism, our studio is a playground for innovation. We help brands evolve by stripping away the noise and focusing on high-impact, high-resolution storytelling.
         </p>
         
-        <img ref={logoRef} src="/Logo full.png" alt="K² Studios Branding" className="about-logo" />
+        <img ref={logoRef} src="/Logo full.png" alt="KSquareStudio Branding" className="about-logo" />
       </div>
     </section>
   );

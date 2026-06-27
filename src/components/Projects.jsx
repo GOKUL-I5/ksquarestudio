@@ -69,7 +69,13 @@ const Projects = () => {
             {/* Header Content */}
             <div className="projects-header">
                 <div className="projects-logo">
-                    <img src="/Logo full.png" alt="K² Studios Portfolio Showcase" />
+                    <img 
+                      src="/Logo full.png" 
+                      alt="KSquareStudio Portfolio Showcase" 
+                      loading="lazy"
+                      width="150"
+                      height="150"
+                    />
                 </div>
                 <h2 className="projects-title">Projects</h2>
             </div>
