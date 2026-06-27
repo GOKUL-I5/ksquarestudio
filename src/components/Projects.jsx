@@ -73,7 +73,7 @@ const Projects = () => {
                       src="/Logo full.png" 
                       alt="KSquareStudio Portfolio Showcase" 
                       loading="lazy"
-                      width="150"
+                      width="300"
                       height="150"
                     />
                 </div>
