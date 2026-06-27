@@ -10,7 +10,7 @@ import { useEffect } from 'react';
  * @param {string} [props.ogImage] - Custom Open Graph image URL
  * @param {Object} [props.schema] - Optional JSON-LD schema object to inject
  */
-export default function SEO({ title, description, canonical, ogImage = '/Logo full.png', schema }) {
+export default function SeoMetadataManager({ title, description, canonical, ogImage = '/Logo full.png', schema }) {
   useEffect(() => {
     // 1. Update Title
     if (title) {

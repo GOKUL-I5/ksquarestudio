@@ -35,7 +35,7 @@ function ScrollToTop() {
 function HomeView({ playTransition }) {
   return (
     <>
-      <SEO 
+      <SEO
         title="Web Design & Development Company in Chennai | KSquareStudio"
         description="KSquareStudio is a premier web design & development company in Chennai, delivering custom websites, UI/UX design, SEO, branding, and AI automation."
         canonical={window.location.origin + "/"}
@@ -97,10 +97,10 @@ function App() {
   return (
     <div className="bg-[#050012] min-h-screen text-white font-sans selection:bg-purple-600 selection:text-white relative">
       <CustomCursor />
-      
+
       {/* Volumetric Particle Network serving as endless depth backdrop */}
       <ParticleNetwork />
-      
+
       {/* Cinematic Transition Overlay */}
       <PageTransition ref={transitionRef} />
 

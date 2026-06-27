@@ -66,7 +66,7 @@ export default function LocalSeoFaq() {
   return (
     <section id="faq" className="localseo-faq-section">
       <div className="localseo-glow"></div>
-      
+
       <div className="localseo-container">
         <div className="localseo-header">
           <div className="localseo-logo">
@@ -84,12 +84,12 @@ export default function LocalSeoFaq() {
             <h3>Frequently Asked Questions</h3>
             <div className="faq-list">
               {faqs.map((faq, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`faq-item ${activeIndex === index ? 'active' : ''}`}
                 >
-                  <button 
-                    className="faq-question-btn" 
+                  <button
+                    className="faq-question-btn"
                     onClick={() => toggleFaq(index)}
                     aria-expanded={activeIndex === index}
                     aria-controls={`faq-answer-${index}`}
@@ -97,7 +97,7 @@ export default function LocalSeoFaq() {
                     <span>{faq.question}</span>
                     <Plus size={20} className="faq-toggle-icon" />
                   </button>
-                  <div 
+                  <div
                     id={`faq-answer-${index}`}
                     className="faq-answer"
                     style={{ maxHeight: activeIndex === index ? '300px' : '0' }}
@@ -121,7 +121,7 @@ export default function LocalSeoFaq() {
                     Chennai, Tamil Nadu, India
                   </span>
                 </div>
-                
+
                 <div className="localseo-info-group">
                   <span className="localseo-info-label">Contact Details</span>
                   <span className="localseo-info-value">
@@ -156,12 +156,12 @@ export default function LocalSeoFaq() {
             <div className="localseo-map-container">
               <div className="localseo-map-overlay"></div>
               {/* Using a privacy-friendly OpenStreetMap/Google Maps embed configured to look dark/monochrome */}
-              <iframe 
+              <iframe
                 title="KSquareStudio Chennai Office Location"
                 className="localseo-map-embed"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.88653935955!2d80.11713175892556!3d13.082680214691456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6a61a9911e2c6360!2sChennai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sus!4v1710500000000!5m2!1sen!2sus"
-                allowFullScreen="" 
-                loading="lazy" 
+                allowFullScreen=""
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
               <div className="localseo-map-marker">

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Cpu, Database, Eye, Terminal } from 'lucide-react';
+import { ArrowLeft, BarChart3, Search, Settings, TrendingUp } from 'lucide-react';
 import SEO from './SEO';
 import './About.css';
 
-export default function AiServicePage({ playTransition }) {
+export default function SeoServicePage({ playTransition }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function AiServicePage({ playTransition }) {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "AI Automation",
+        "name": "SEO Services",
         "item": window.location.href
       }
     ]
@@ -52,10 +52,10 @@ export default function AiServicePage({ playTransition }) {
 
   return (
     <div className="relative min-h-screen pt-24 pb-16 px-4 md:px-8 max-w-5xl mx-auto z-10">
-      <SEO 
-        title="AI Automation Services | Workflow & Chatbot Systems | KSquareStudio"
-        description="Streamline your workflows with premium AI automation services. KSquareStudio builds custom AI bots, automated data feeds, and API integrations."
-        canonical={window.location.origin + "/services/ai-automation"}
+      <SEO
+        title="SEO Services Chennai | Local Google Search Optimization | KSquareStudio"
+        description="Rank #1 with the best SEO services Chennai has to offer. KSquareStudio specializes in technical SEO, Core Web Vitals optimization, and local search growth."
+        canonical={window.location.origin + "/services/seo"}
         schema={serviceBreadcrumbSchema}
       />
 
@@ -74,12 +74,12 @@ export default function AiServicePage({ playTransition }) {
             </button>
           </li>
           <li><span>/</span></li>
-          <li className="text-purple-300 font-medium" aria-current="page">AI Automation</li>
+          <li className="text-purple-300 font-medium" aria-current="page">SEO Services</li>
         </ol>
       </nav>
 
       {/* Back Button */}
-      <button 
+      <button
         onClick={handleBack}
         className="flex items-center gap-2 mb-10 text-sm text-gray-400 hover:text-white transition-colors group"
       >
@@ -90,55 +90,55 @@ export default function AiServicePage({ playTransition }) {
       {/* Hero Header */}
       <header className="mb-12">
         <span className="text-[#a855f7] font-bold tracking-wider uppercase text-sm block mb-2">
-          Intelligent Systems
+          Search Visibility
         </span>
         <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tight bg-gradient-to-r from-white via-gray-200 to-purple-400 bg-clip-text text-transparent">
-          AI Automation Services
+          SEO Services Chennai
         </h1>
         <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl">
-          At KSquareStudio, we make machine intelligence actionable. We integrate custom AI solutions, 
-          automated workflows, and natural language chatbots to drive operational efficiency.
+          At KSquareStudio, we decode the Google search algorithm. We implement precision-engineered
+          search engine optimization strategies that place your Chennai business at the top of search rankings.
         </p>
       </header>
 
       {/* Content Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        
+
         {/* Main Body */}
         <section className="md:col-span-2 space-y-8 text-gray-300">
           <div className="glass p-6 md:p-8 rounded-2xl border border-white/5 space-y-6">
             <h2 className="text-2xl font-bold text-white border-b border-purple-500/20 pb-3 flex items-center gap-2">
-              <Cpu size={24} className="text-[#a855f7]" />
-              Bespoke Workflow Automation
+              <Search size={24} className="text-[#a855f7]" />
+              Data-Driven Organic Growth
             </h2>
             <p className="leading-relaxed text-gray-300">
-              Repetitive manual tasks limit your company's potential to scale. Our AI automation services focus on connecting core software databases with generative AI agents. This allows startups and businesses to automate customer intake, analyze documents, and generate content pipelines with zero manual overhead.
+              Good SEO is not about tricks; it is about providing clear, structured context to search crawlers. Our SEO services Chennai team optimizes every layer of your website, from HTML headings and sitemaps to structured Schema.org JSON-LD data. This ensures search engines index your pages correctly and reward you with organic traffic.
             </p>
             <p className="leading-relaxed text-gray-300">
-              We focus on building resilient backend pipelines that connect custom databases and public APIs. By integrating smart agents and retrieval-augmented systems directly into your web applications, we build tools that act as virtual extensions of your team.
+              We perform deep keyword research to target queries with high commercial intent in Chennai. By mapping custom service landing pages, we build authority for keywords like <em>Web Design Company Chennai</em> and <em>Website Development Chennai</em>, allowing you to bypass competitors and secure prime organic positions.
             </p>
           </div>
 
           <div className="glass p-6 md:p-8 rounded-2xl border border-white/5 space-y-6">
             <h2 className="text-2xl font-bold text-white border-b border-purple-500/20 pb-3 flex items-center gap-2">
-              <Terminal size={24} className="text-[#a855f7]" />
-              AI Integration Stack
+              <Settings size={24} className="text-[#a855f7]" />
+              Our Technical SEO Stack
             </h2>
             <p className="leading-relaxed text-gray-300">
-              We design and implement custom automations using industry-leading AI models and frameworks:
+              We structure our SEO integrations to follow Google's latest ranking factors:
             </p>
             <ul className="space-y-3 pl-2">
               <li className="flex items-start gap-3">
-                <Database size={18} className="text-purple-400 mt-1 flex-shrink-0" />
-                <span><strong>Conversational Chatbots:</strong> Custom-trained customer support agents capable of answering enquiries, managing appointments, and directing leads 24/7.</span>
+                <TrendingUp size={18} className="text-purple-400 mt-1 flex-shrink-0" />
+                <span><strong>Structured Schema.org Markups:</strong> Injecting specific LocalBusiness, ProfessionalService, Product, and FAQ schemas so Google understands who you are and highlights your search listings.</span>
               </li>
               <li className="flex items-start gap-3">
-                <Database size={18} className="text-purple-400 mt-1 flex-shrink-0" />
-                <span><strong>API & Database Connectors:</strong> Connecting systems like Stripe, Slack, Gmail, and Google Sheets to create unified automated workflows.</span>
+                <TrendingUp size={18} className="text-purple-400 mt-1 flex-shrink-0" />
+                <span><strong>Core Web Vitals & Speed:</strong> Minimizing script sizes, setting caching headers, pre-rendering static routes, and ensuring INP (Interaction to Next Paint) stays below 200ms.</span>
               </li>
               <li className="flex items-start gap-3">
-                <Database size={18} className="text-purple-400 mt-1 flex-shrink-0" />
-                <span><strong>Structured Data Processing:</strong> Extracting and categorizing unstructured PDF and email data directly into searchable database systems.</span>
+                <TrendingUp size={18} className="text-purple-400 mt-1 flex-shrink-0" />
+                <span><strong>Content Relevance & Accessibility:</strong> Writing descriptive image alt text, ensuring correct heading hierarchies (one H1 per page), and verifying mobile responsive crawlability.</span>
               </li>
             </ul>
           </div>
@@ -147,9 +147,9 @@ export default function AiServicePage({ playTransition }) {
         {/* Sidebar Info Card */}
         <aside className="space-y-6">
           <div className="glass p-6 rounded-2xl border border-white/5 bg-gradient-to-br from-purple-900/10 to-transparent">
-            <h3 className="text-xl font-bold text-white mb-4">Automation Scope</h3>
+            <h3 className="text-xl font-bold text-white mb-4">SEO Checklist</h3>
             <div className="flex flex-wrap gap-2">
-              {["AI Integrations", "Chatbot Design", "Workflow Triggers", "API Connections", "Data Extraction", "OpenAI / Claude", "Vector Databases", "LangChain", "Process Audits", "Custom Scripts"].map((tech) => (
+              {["Technical SEO", "Local SEO", "JSON-LD Schemas", "Sitemap Optimization", "Robots.txt", "Canonical Links", "Keyword Research", "On-Page Audits", "Core Web Vitals", "Link Building"].map((tech) => (
                 <span key={tech} className="bg-purple-900/20 border border-purple-500/30 text-purple-200 text-xs px-3 py-1.5 rounded-full font-medium">
                   {tech}
                 </span>
@@ -158,23 +158,23 @@ export default function AiServicePage({ playTransition }) {
           </div>
 
           <div className="glass p-6 rounded-2xl border border-white/5">
-            <h3 className="text-xl font-bold text-white mb-4">Automation Goals</h3>
+            <h3 className="text-xl font-bold text-white mb-4">Key Metrics Handled</h3>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                90% Reduction in Manual Tasks
+                Google Search Console Setup
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                24/7 Instant Support Responses
+                XML Sitemap Audits
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                Zero Manual Data Entry Errors
+                Interaction to Next Paint (INP)
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                Scalable Cloud Infrastructure
+                Google E-E-A-T Compliance
               </li>
             </ul>
           </div>
@@ -185,26 +185,26 @@ export default function AiServicePage({ playTransition }) {
       {/* Service FAQs Accordion */}
       <section className="glass p-6 md:p-8 rounded-2xl border border-white/5 mb-12">
         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-          <Eye size={24} className="text-[#a855f7]" />
-          AI Automation FAQs
+          <BarChart3 size={24} className="text-[#a855f7]" />
+          Search Optimization FAQs
         </h2>
         <div className="space-y-4 text-gray-300">
           <div className="border-b border-white/5 pb-4">
-            <h3 className="font-semibold text-white mb-2">Can AI automation connect with my existing CRM database?</h3>
+            <h3 className="font-semibold text-white mb-2">How long does it take to see results from SEO?</h3>
             <p className="text-sm leading-relaxed text-gray-400">
-              Yes. We build custom API connectors that integrate with CRMs (like HubSpot, Salesforce, or Airtable) to pull data, update client status, and trigger notification workflows.
+              Organic search optimization is a long-term investment. While technical updates (like fixing speed, canonicals, and structured schemas) can show results in 2 to 4 weeks, significant keyword ranking improvements typically take 3 to 6 months of steady content authority building.
             </p>
           </div>
           <div className="border-b border-white/5 pb-4">
-            <h3 className="font-semibold text-white mb-2">How secure is AI customer data handling?</h3>
+            <h3 className="font-semibold text-white mb-2">What is Local SEO and why is it important for Chennai businesses?</h3>
             <p className="text-sm leading-relaxed text-gray-400">
-              Data security is our primary focus. We implement end-to-end encryption, respect GDPR and privacy regulations, and use official OpenAI or Claude API endpoints that do not train models on client data.
+              Local SEO optimizes your digital presence to rank for location-specific search queries (like "services near me" or "in Chennai"). By implementing localized schemas and referencing target zones (OMR, Velachery, T. Nagar), you ensure local decision-makers find your business first.
             </p>
           </div>
           <div>
-            <h3 className="font-semibold text-white mb-2">Do you provide custom chatbot training?</h3>
+            <h3 className="font-semibold text-white mb-2">Do you assist with Google Search Console and Analytics?</h3>
             <p className="text-sm leading-relaxed text-gray-400">
-              Yes, we set up retrieval-augmented generation (RAG) pipelines. This trains the AI chatbot on your specific company documents, product catalogs, and support guidelines to ensure highly accurate, contextual answers.
+              Yes, we handle the complete configuration, verification, and sitemap submission in Google Search Console, as well as installing privacy-friendly tracking tags to monitor traffic metrics and search queries.
             </p>
           </div>
         </div>
@@ -212,11 +212,11 @@ export default function AiServicePage({ playTransition }) {
 
       {/* Call to Action */}
       <div className="text-center bg-gradient-to-r from-purple-900/15 via-[#8f00ff]/10 to-blue-900/10 border border-purple-500/20 p-8 rounded-2xl">
-        <h2 className="text-2xl font-bold text-white mb-3">Scale Your Operations Automatically</h2>
+        <h2 className="text-2xl font-bold text-white mb-3">Dominating Google Search Results Starts Here</h2>
         <p className="text-gray-300 mb-6 max-w-xl mx-auto">
-          Partner with KSquareStudio. Let's design and deploy custom AI automation systems to optimize your business workflows and maximize team efficiency.
+          Partner with KSquareStudio. Let us implement a robust, data-backed SEO structure to drive qualified organic traffic, leads, and sales to your business.
         </p>
-        <button 
+        <button
           onClick={() => {
             navigate('/');
             setTimeout(() => {
@@ -226,7 +226,7 @@ export default function AiServicePage({ playTransition }) {
           }}
           className="bg-[#8f00ff] hover:bg-[#7b00ff] text-white px-6 py-3 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(143,0,255,0.4)] hover:shadow-[0_0_30px_rgba(143,0,255,0.6)]"
         >
-          Consult Our AI Architects
+          Consult Our Chennai SEO Experts
         </button>
       </div>
     </div>
